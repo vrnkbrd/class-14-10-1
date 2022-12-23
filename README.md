@@ -1,7 +1,8 @@
 # class-14-10-1
-Task 8kyu
+### Task 8kyu
 Consider an array/list of sheep where some sheep may be missing from their place. We need a function that counts the number of sheep present in the array (true means present).
-My solution: 
+### My solution: 
+```Java
 public class Counter {
   public int countSheeps(Boolean[] arrayOfSheeps) {
     int sheep = 0;
@@ -14,7 +15,10 @@ public class Counter {
    return sheep;
   }
 }
-Fav solution: 
+```
+
+### Fav solution: 
+```Java
 import java.util.Arrays;
 import java.util.function.Predicate;
 public class Counter {
@@ -22,14 +26,16 @@ public class Counter {
     return (int) Arrays.stream(arrayOfSheeps).filter(Predicate.isEqual(Boolean.TRUE)).count();
   }
 }
+```
 I loved that the participant used predicates and it was able to writh the whole code in one libe without any exceptions. 
 
-Task 2
-6 kyu 
+### Task 6 kyu 
 Given a list and a number, create a new list that contains each number of list at most N times, without reordering.
 For example if the input number is 2, and the input list is [1,2,3,1,2,1,2,3], you take [1,2,3,1,2], drop the next [1,2] since this would lead to 1 and 2 being in the result 3 times, and then take 3, which leads to [1,2,3,1,2,3].
 With list [20,37,20,21] and number 1, the result would be [20,37,21].
+
 My solution: 
+```Java
 import java.util.*;
 
 public class EnoughIsEnough {
@@ -55,9 +61,11 @@ public class EnoughIsEnough {
     
     return retList.stream().mapToInt(i->i).toArray();
   }
-
 }
+```
+
 Fav solution: 
+```Java
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.IntStream;
@@ -70,3 +78,4 @@ public class EnoughIsEnough {
       .toArray();
   }
 }
+```
